@@ -12,17 +12,15 @@ class HabitsController < ApplicationController
     @habit = Habit.new
   end
 
-  def create
-    @habit = Habit.new(habit_params)
-    @habit.user_id = 1 # пока жестко для первого пользователя
-
-    if @habit.save
-      redirect_to @habit, notice: "Привычка создана!"
-    else
-      render :new
-    end
+def create
+  @habit = Habit.new(habit_params)
+  if @habit.save
+    redirect_to habits_path, notice: "Привычка создана!"
+  else
+    render :new
   end
-
+  
+end
   def edit
   end
 

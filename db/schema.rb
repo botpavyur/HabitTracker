@@ -10,15 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[8.0].define(version: 2025_09_11_084020) do
+=======
+ActiveRecord::Schema[8.0].define(version: 2025_09_13_092741) do
+  create_table "habit_logs", force: :cascade do |t|
+    t.integer "habit_id", null: false
+    t.date "date"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["habit_id"], name: "index_habit_logs_on_habit_id"
+  end
+
+>>>>>>> 08cae08 (Initial commit)
   create_table "habits", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "frequency"
+<<<<<<< HEAD
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_habits_on_user_id"
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> 08cae08 (Initial commit)
   end
 
   create_table "users", force: :cascade do |t|
@@ -29,5 +47,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_11_084020) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   add_foreign_key "habits", "users"
+=======
+  add_foreign_key "habit_logs", "habits"
+>>>>>>> 08cae08 (Initial commit)
 end
