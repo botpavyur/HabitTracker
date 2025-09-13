@@ -1,0 +1,23 @@
+<h1>Мои привычки</h1>
+
+<%= link_to "Добавить новую привычку", new_habit_path %>
+
+<ul>
+  <% @habits.each do |habit| %>
+    <li>
+      <strong><%= habit.title %></strong> — <%= habit.description %><br>
+      
+      Последние отметки:
+      <% if habit.habit_logs.any? %>
+        <%= habit.habit_logs.order(date: :desc).limit(3).map { |log| log.date.strftime("%d.%m.%Y") }.join(", ") %>
+      <% else %>
+        нет
+      <% end %>
+      <br>
+
+      <%= link_to "Редактировать", edit_habit_path(habit) %>
+      <%= link_to "Отметки", habit_habit_logs_path(habit) %>
+      <%= button_to "Удалить", habit_path(habit), method: :delete %>
+    </li>
+  <% end %>
+</ul>

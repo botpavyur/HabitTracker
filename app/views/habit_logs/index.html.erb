@@ -1,0 +1,15 @@
+<h1>Отметки для привычки: <%= @habit.title %></h1>
+
+<%= render "form" %>
+
+<h2>Список отметок</h2>
+<ul>
+  <% @habit_logs.each do |log| %>
+    <li>
+      <%= log.date.strftime("%d.%m.%Y") %>
+      <%= button_to "Удалить", habit_habit_log_path(@habit, log), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Назад к привычкам", habits_path %>

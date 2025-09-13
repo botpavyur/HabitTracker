@@ -1,0 +1,10 @@
+<%= form_with model: [@habit, @habit_log], local: true do |f| %>
+  <div>
+    <%= f.label :date, "Дата" %><br>
+    <%= f.date_field :date %>
+  </div>
+
+  <div>
+    <%= f.submit "Добавить отметку" %>
+  </div>
+<% end %>

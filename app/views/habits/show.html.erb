@@ -1,0 +1,15 @@
+<h1><%= @habit.title %></h1>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @habit.description %>
+</p>
+
+<p>
+  <strong>Частота:</strong>
+  <%= @habit.frequency %>
+</p>
+
+<%= link_to "Редактировать", edit_habit_path(@habit) %> |
+<%= button_to "Удалить", habit_path(@habit), method: :delete %> |
+<%= link_to "Добавить/Просмотреть отметки", habit_habit_logs_path(@habit) %>
