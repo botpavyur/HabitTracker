@@ -1,24 +1,8 @@
-# README
+HabitTracker is a simple and intuitive Rails application that allows you to track your daily habits and monitor your progress over time. This project is perfect for anyone looking to build healthy routines and visualize their habit completion history.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+⸻
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features
+	•	Create, edit, and delete habits
+	•	Add daily logs for each habit
+	•	View habit history with the last few logs displayed
